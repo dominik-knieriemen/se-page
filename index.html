@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktseite</title>
+    <style>
+        /* Einfache responsive Design */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-buttons button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (min-width: 600px) {
+            .contact-buttons {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Kontaktieren Sie uns</h1>
+    <div class="contact-buttons">
+        <!-- Button für E-Mail -->
+        <button id="email-btn">Per E-Mail kontaktieren</button>
+        <div class="contact-info" id="email-info">
+            <a href="mailto:deine-email@example.com?subject=Kontakt%20von%20der%20Website">Jetzt E-Mail senden</a>
+        </div>
+
+        <!-- Button für WhatsApp -->
+        <button id="whatsapp-btn">Per WhatsApp kontaktieren</button>
+        <div class="contact-info" id="whatsapp-info">
+            <a href="https://wa.me/491234567890?text=Hallo!%20Ich%20möchte%20Kontakt%20aufnehmen.">Jetzt WhatsApp senden</a>
+        </div>
+    </div>
+
+    <script>
+        // E-Mail Button Funktion
+        document.getElementById('email-btn').addEventListener('click', function() {
+            var emailInfo = document.getElementById('email-info');
+            if (emailInfo.style.display === "none") {
+                emailInfo.style.display = "block";
+            } else {
+                emailInfo.style.display = "none";
+            }
+        });
+
+        // WhatsApp Button Funktion
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            var whatsappInfo = document.getElementById('whatsapp-info');
+            if (whatsappInfo.style.display === "none") {
+                whatsappInfo.style.display = "block";
+            } else {
+                whatsappInfo.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
